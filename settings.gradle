@@ -9,3 +9,6 @@
 
 rootProject.name = 'game'
 include('app')
+include 'app:src:main:Inputs'
+findProject(':app:src:main:Inputs')?.name = 'Inputs'
+
