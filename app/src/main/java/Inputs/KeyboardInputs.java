@@ -1,9 +1,15 @@
 package Inputs;
 
+import game.GamePanel;
+
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 public class KeyboardInputs implements KeyListener {
+    private GamePanel gamePanel;
+    public KeyboardInputs(GamePanel gamePanel){
+        this.gamePanel = gamePanel;
+    }
     /**
      * @param e the event to be processed
      */
@@ -19,16 +25,16 @@ public class KeyboardInputs implements KeyListener {
     public void keyPressed(KeyEvent e) {
         switch(e.getKeyCode()){
             case KeyEvent.VK_W:
-                System.out.println("Its W");
+                gamePanel.changeYDelta(-5);
             break;
             case KeyEvent.VK_A:
-                System.out.println("Its A");
+                gamePanel.changeXDelta(-5);
             break;
             case KeyEvent.VK_S:
-                System.out.println("its S");
+                gamePanel.changeYDelta(5);
             break;
             case KeyEvent.VK_D:
-                System.out.println("its D");
+                gamePanel.changeXDelta(5);
             break;
         }
     }
